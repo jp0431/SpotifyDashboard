@@ -130,7 +130,7 @@ horas = horas.sort_values("HoursPlayed", ascending= False)["hour"].iloc[0]
 hora_dia = df.groupby(["hour", "day"])['HoursPlayed'].sum().reset_index()#.sort_values("HoursPlayed", ascending=False).iloc[0]
 hora_dia['day'] =hora_dia['day'].map(dict_dia_sem)
 hora_dia = hora_dia.sort_values("HoursPlayed", ascending=False).iloc[0]
-sl.markdown(f"🎯 Suelo escuchar música a las **{int(horas)}:00**. Pero el día de la semana que más escucho música es el **{hora_dia[1]}** a las **{int(hora_dia[0])}:00**")
+sl.markdown(f"🎯 Suelo escuchar música a las **{int(horas)}:00**. Pero el día de la semana que más escucho música es el **{hora_dia.iloc[1]}** a las **{int(hora_dia.iloc[0])}:00**")
 
 sl.markdown("## 🧠 Mi perfil musical")
 
