@@ -1,7 +1,6 @@
 import streamlit as sl
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import plotly.express as px
 import ipywidgets as widgets
 from IPython.display import display
