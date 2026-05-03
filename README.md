@@ -1,22 +1,63 @@
-# SpotifyDashboard
-SpotifyDashbnoard 2026 Q1
-Desde que lo descubrí, me ha fascinado el SPOTIFY WRAPPED anual, así que he creado uno propio.
-🎧 He analizado mis hábitos de Spotify del primer trimestre 2026 con Python
+# 🎧 Spotify Listening Dashboard
+He hecho un dasboard interactivo para analizar mis habitos de escucha en Spotify a partir de mi historial personal del primer trimestre de 2026.
+Este proyecto Explora, cuándo, cómo y qué música escucho, transformando datos crudos en insights visuales.
+# 🚀 Demo
+https://spotifydashboard-7qpvhrdxsah793qwe4hpls.streamlit.app
+# 📊 ¿Qué muestra?
 
-Quería entender:
-- cuándo escucho más música
-- qué artistas dominan mis sesiones
-- si realmente exploro música nueva
+🎧 Horas totales de escucha
 
+🎵 Canciones reproducidas
 
-He construido un dashboard interactivo usando:
-→ Python + Pandas + Plotly + Streamlit
+🎤 Número de artistas distintos
 
-Algunos insights:
-🎯 Escucho principalmente por la mañana
-🎤 Mi artista #1 representa el 6% de mi escucha
-🔍 Alta exploración 
+⏭️ Porcentaje de canciones saltadas
 
-Link al proyecto: [GitHub / App]
+🕒 Heatmap de actividad (día vs hora)
 
-#Python #DataAnalysis #Spotify #Portfolio
+🎤 Top artistas
+
+🎶 Top canciones
+
+🧠 Perfil musical basado en comportamiento
+
+# 🧠 Ejemplo de insights
+🎯 Escucho música principalmente por la mañana
+
+🔍 Tengo un perfil de alta exploración musical
+
+⏭️ Mi comportamiento alterna entre exploración y selección
+
+# 🎛️ Funcionalidades
+
+Filtro por mes
+
+Filtro dinámico por artista (dependiente del mes)
+
+Visualización interactiva con Plotly
+
+Dashboard estructurado tipo producto (no solo análisis)
+
+# 🎛️ Funcionalidades
+
+Filtro por mes
+
+Filtro dinámico por artista (dependiente del mes)
+
+Visualización interactiva con Plotly
+
+# ⚙️ Cómo ejecutarlo
+git clone https://github.com/jp0431/SpotifyDashboard
+
+cd spotify-dashboard
+
+pip install -r requirements.txt
+
+streamlit run app.py
+
+# 📂 Datos
+
+Los datos provienen del historial de escucha de Spotify (Streaming History).
+
+Puedes solicitar los tuyos aquí:
+👉 https://www.spotify.com/account/privacy/
