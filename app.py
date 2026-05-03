@@ -97,17 +97,29 @@ data["month_entropy"] = data["endTime"].dt.to_period("M")
 
 # Añadimos los 2 filtros, mes y artista
 sl.sidebar.header("Filtros")
-month = sl.sidebar.selectbox("Selecciona mes", ["Todos"]+sorted(data["month"].unique()))
-artista = sl.sidebar.selectbox("Selecciona el artisa", ["Todos"]+sorted(data["artistName"].unique()))
-# Ajustamos el comportamiento del filtro
-df = data.copy()
+# month = sl.sidebar.selectbox("Selecciona mes", ["Todos"]+sorted(data["month"].unique()))
+# artista = sl.sidebar.selectbox("Selecciona el artisa", ["Todos"]+sorted(data["artistName"].unique()))
+# # Ajustamos el comportamiento del filtro
+# df = data.copy()
+# if month != "Todos":
+#     df = df[df["month"] == month]
+# if artista != "Todos":
+#     df = df[df["artistName"] == artista]
+# if df.empty:
+#     sl.warning("No hay datos para esta selección")
+#     sl.stop()
+df_temp = data.copy()
 if month != "Todos":
-    df = df[df["month"] == month]
+    df_temp = df_temp[df_temp["month"] == month]
+
+artista = sl.sidebar.selectbox(
+    "Selecciona el artista",
+    ["Todos"] + sorted(df_temp["artistName"].unique())
+)
+df = df_temp.copy()
+
 if artista != "Todos":
     df = df[df["artistName"] == artista]
-if df.empty:
-    sl.warning("No hay datos para esta selección")
-    sl.stop()
 # Generamos las metricas cada vez que se aplique un filtro
 top_canciones, top_artistas,top_repes, horas_escuchadas, n_canciones, n_artits, skips, percen_skips, score, avg_artist = incializa_metricas(df)
 sl.write(
