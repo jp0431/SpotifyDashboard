@@ -118,8 +118,8 @@ artista = sl.sidebar.multiselect(
 )
 df = df_temp.copy()
 
-if artista != "Todos":
-    df = df[df["artistName"] == artista]
+if artistas:
+    df = df[df["artistName"].isin(artistas)]
 # Generamos las metricas cada vez que se aplique un filtro
 top_canciones, top_artistas,top_repes, horas_escuchadas, n_canciones, n_artits, skips, percen_skips, score, avg_artist = incializa_metricas(df)
 sl.write(
