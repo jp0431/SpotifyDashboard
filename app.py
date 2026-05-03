@@ -97,7 +97,7 @@ data["month_entropy"] = data["endTime"].dt.to_period("M")
 
 # Añadimos los 2 filtros, mes y artista
 sl.sidebar.header("Filtros")
-# month = sl.sidebar.selectbox("Selecciona mes", ["Todos"]+sorted(data["month"].unique()))
+month = sl.sidebar.selectbox("Selecciona mes", ["Todos"]+sorted(data["month"].unique()))
 # artista = sl.sidebar.selectbox("Selecciona el artisa", ["Todos"]+sorted(data["artistName"].unique()))
 # # Ajustamos el comportamiento del filtro
 # df = data.copy()
