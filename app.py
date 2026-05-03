@@ -114,12 +114,13 @@ if month != "Todos":
 
 artistas = sl.sidebar.multiselect(
     "Selecciona el artista",
-    ["Todos"] + sorted(df_temp["artistName"].unique())
+    sorted(df_temp["artistName"].unique())
 )
 df = df_temp.copy()
 
 if artistas:
     df = df[df["artistName"].isin(artistas)]
+
 # Generamos las metricas cada vez que se aplique un filtro
 top_canciones, top_artistas,top_repes, horas_escuchadas, n_canciones, n_artits, skips, percen_skips, score, avg_artist = incializa_metricas(df)
 sl.write(
@@ -166,7 +167,7 @@ col2.metric("🎧 Engagement", f"{100 - percen_skips:.0f}%")
 #Sección artistas
 top_artista =  top_artistas.iloc[0]["artistName"]
 top_artista_count = top_artistas.iloc[0]["msPlayed"] / df["msPlayed"].sum() * 100
-if artista == "Todos": #Si hay un artista seleccionado no se mostrará quien es el artista favorito ni el tiempo escuchado
+if len(artistas) >1: #Si hay un artista seleccionado no se mostrará quien es el artista favorito ni el tiempo escuchado
     sl.markdown("## Artistas")
     sl.write(f"Mi artista favorito es **{top_artista}**", f"Representando un **{top_artista_count:.2f}%** del tiempo")
     sl.plotly_chart(fig_artist)
