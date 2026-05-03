@@ -105,7 +105,9 @@ if month != "Todos":
     df = df[df["month"] == month]
 if artista != "Todos":
     df = df[df["artistName"] == artista]
-    
+if df.empty:
+    sl.warning("No hay datos para esta selección")
+    sl.stop()
 # Generamos las metricas cada vez que se aplique un filtro
 top_canciones, top_artistas,top_repes, horas_escuchadas, n_canciones, n_artits, skips, percen_skips, score, avg_artist = incializa_metricas(df)
 sl.write(
