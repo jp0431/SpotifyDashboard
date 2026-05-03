@@ -112,7 +112,7 @@ df_temp = data.copy()
 if month != "Todos":
     df_temp = df_temp[df_temp["month"] == month]
 
-artista = sl.sidebar.multiselect(
+artistas = sl.sidebar.multiselect(
     "Selecciona el artista",
     ["Todos"] + sorted(df_temp["artistName"].unique())
 )
