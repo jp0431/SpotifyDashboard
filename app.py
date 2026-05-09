@@ -10,7 +10,7 @@ import plotly.io as pio
 def incializa_metricas(data): #Obtenemos las metricas más importantes de las canciones de spotify
     
     #Canciones repetidas
-    top_repes = data[data["skipped"]== False]['trackName'].value_counts().reset_index().head(10)
+    top_repes = data[data["skipped"]== False][['trackName', 'artistName']].value_counts().reset_index().head(10)
     #Canciones más escuchadas
     top_canciones = data.groupby("trackName")['msPlayed'].sum().sort_values(ascending=False).reset_index().head(5)
     #Artitstas escuchadas
